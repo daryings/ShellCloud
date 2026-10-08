@@ -1,0 +1,80 @@
+# SoundCloud Desktop (custom edition)
+
+An unofficial desktop app for [SoundCloud](https://soundcloud.com) built with Electron. It adds themes, optional plugins, Discord Rich Presence, a tray icon, media-key support and a floating mini player.
+
+> Not affiliated with or endorsed by SoundCloud.
+
+## Requirements
+
+- Windows 10/11
+- [Node.js](https://nodejs.org) (LTS version)
+- Git (optional, only to clone the repo)
+
+## Run it
+
+1. Download the repo (**Code → Download ZIP**, then extract it) or clone it:
+
+   ```powershell
+   git clone https://github.com/<your-username>/<your-repo>.git
+   cd <your-repo>
+   ```
+
+2. Install the dependencies and start the app:
+
+   ```powershell
+   npm install
+   npm start
+   ```
+
+   The first `npm install` takes a minute because it downloads Electron.
+
+3. Log in to SoundCloud inside the app and play something.
+
+## Using it
+
+- Click the **gear icon** to open Settings. There you can pick a theme and turn plugins on or off. Settings save automatically.
+- Right-click the **tray icon** for quick toggles: theme, plugins, Discord Rich Presence, ad/tracker blocking and minimize-to-tray.
+- Closing the window hides it to the tray (you can turn this off). Use **Quit** in the tray menu to fully exit.
+- Media keys (play/pause, next, previous) work even when the app is in the background.
+
+## Features
+
+- **Themes:** Gold, Galaxy, OLED Black, Sakura, Dracula, Nord, Catppuccin, Synthwave, Forest and more, plus a custom theme you create yourself.
+- **Discord Rich Presence:** shows the current song on your Discord profile, with an optional progress bar, artwork and a "Listen on SoundCloud" button. Discord must be open on the same computer.
+- **Plugins** (all optional):
+  - Compact library
+  - Focus mode
+  - Soft corners
+  - Accent glow
+  - Theme creator
+  - Listening history (stored locally)
+  - Volume memory
+  - Keyboard shortcuts: Space play/pause, ←/→ seek, M mute, N/P next/previous
+  - Audio visualizer
+  - Track notifications
+  - Floating player (always-on-top, draggable and resizable)
+
+Plugins are local and CSS-based. They don't load remote code or automate SoundCloud actions.
+
+## Build a portable .exe
+
+```powershell
+npm run build
+```
+
+The portable executable is created in the `dist` folder.
+
+## Customising
+
+- **Add a theme:** add an entry in `themes.js`. It appears in Settings and the tray menu automatically.
+- **Add a CSS plugin:** add an entry in `plugins.js`. It appears in Settings and the tray menu automatically.
+
+## Troubleshooting
+
+| Problem | Fix |
+| --- | --- |
+| `npm` is not recognized | Install Node.js, then open a new terminal window. |
+| App window doesn't open | Run `npm install` again, then `npm start`. |
+| Discord status doesn't show | Make sure the Discord desktop app is open and Rich Presence is on in Settings. Also check Discord's **Settings → Activity Privacy** setting. |
+| Closing the window doesn't quit | It minimizes to the tray. Use the tray menu's **Quit**, or turn off minimize-to-tray. |
+| A page looks broken after a change | Ad/tracker blocking is on by default. Turn it off in the tray menu and restart the app. |
